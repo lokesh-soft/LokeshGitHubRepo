@@ -1,0 +1,55 @@
+﻿<Window x:Class="myDataGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:myDataGrid"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="720" Width="1280">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <DataGrid x:Name="DataGridXAML" HorizontalAlignment="Left" Height="298" Margin="10,10,0,0" VerticalAlignment="Top"
+                  Width="1252" FontSize="24" Background="#FF2CD2DA">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FFE4E4AB" />
+                    <Setter Property="FontWeight" Value="SemiBold" />
+                    <Setter Property="BorderThickness" Value="0 0 1 2" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Employee ID" Binding="{Binding employeeID}" Width="200" />
+                <DataGridTextColumn Header=" Employee Name" Binding="{Binding employeeName}" Width="250" />
+                <DataGridTextColumn Header=" Employee Address" Binding="{Binding employeeAddress}" Width="275" />
+                <DataGridTextColumn Header=" Employee City" Binding="{Binding employeeCity}" Width="230" />
+                <DataGridTextColumn Header=" Employee State" Binding="{Binding employeeState}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="New Employee" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="848, 534, 69, 81" VerticalAlignment="Center"
+                Width="355" Click="AddNewEmployeeBN_Clicked" Height="74" FontSize="36" Background="#FF2CD2DA" />
+
+        <StackPanel Margin="224,341,534,46" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+            <TextBox x:Name="IDTB" Height="50" Margin="10,5" TextWrapping="Wrap" RenderTransformOrigin="0.675, -2.261" FontSize="30" Background="#FFE4E4AB" />
+            <TextBox x:Name="NameTB" Height="50" Margin="10,5" TextWrapping="Wrap" RenderTransformOrigin="0.675, -2.261" FontSize="30" Background="#FFE4E4AB" />
+            <TextBox x:Name="AddressTB" Height="50" Margin="10,5" TextWrapping="Wrap" RenderTransformOrigin="0.675, -2.261" FontSize="30" Background="#FFE4E4AB" />
+            <TextBox x:Name="CityTB" Height="50" Margin="10,5" TextWrapping="Wrap" RenderTransformOrigin="0.675, -2.261" FontSize="30" Background="#FFE4E4AB" />
+            <TextBox x:Name="StateTB" Height="50" Margin="10,5" TextWrapping="Wrap" RenderTransformOrigin="0.675, -2.261" FontSize="30" Background="#FFE4E4AB" />
+        </StackPanel>
+        
+        <StackPanel Margin="62, 341, 1053, 46">
+            <Label Height="50" Margin="5" Content="ID" FontWeight="Bold" FontSize="24" />
+            <Label Height="50" Margin="5" Content="Name" FontWeight="Bold" FontSize="24" />
+            <Label Height="50" Margin="5" Content="Address" FontWeight="Bold" FontSize="24" />
+            <Label Height="50" Margin="5" Content="City" FontWeight="Bold" FontSize="24" />
+            <Label Height="50" Margin="5" Content="State" FontWeight="Bold" FontSize="24" />
+        </StackPanel>
+
+    </Grid>
+</Window>
+    
